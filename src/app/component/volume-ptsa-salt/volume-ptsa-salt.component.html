@@ -1,0 +1,64 @@
+<div class= "salt">
+<mat-toolbar color= "DarkGray" style ="height: 30px;">
+    <b>System Volume Estimate by PTSA, Mo, & Salt Additions</b>
+</mat-toolbar><br/>
+<h3><b>10% PTSA Solution Addition</b></h3>
+<mat-form-field appearance="outline">
+    <mat-label>Initial PTSA Level (ppb)</mat-label>
+    <input matInput type="number" min="0"[(ngModel)]="IPL" (change)="TPSA()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>mL of 10% PTSA Added </mat-label>
+    <input matInput type="number" min="0"[(ngModel)]="MPA" (change)="TPSA()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Final PTSA Level (ppb)</mat-label>
+    <input matInput type="number" min="0"[(ngModel)]="FPL" (change)="TPSA()" >
+  </mat-form-field>
+  <h4>Calculated Volume(Gal) : {{TPSAV}}  </h4>
+
+  <h3><b>aquaDART V-Tablet</b></h3>
+  <mat-form-field appearance="outline">
+      <mat-label>Initial PTSA Level (ppb)</mat-label>
+      <input matInput type="number" [(ngModel)]="IPLP" (change)="ADVT()" >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label># V-Tablets Added</mat-label>
+      <input matInput type="number" [(ngModel)]="VTA" (change)="ADVT()" >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Final PTSA Level (ppb)</mat-label>
+      <input matInput type="number" [(ngModel)]="FPLP" (change)="ADVT()">
+    </mat-form-field>
+  <h2>Calculated Volume(Gal) : {{ADVTV}}  </h2>
+    
+    <h3><b>Liquid Molybdenum (1-lb. Bottle) Addition</b></h3>
+<mat-form-field appearance="outline">
+    <mat-label>Initial Mo Level (ppm)</mat-label>
+    <input matInput type="number" [(ngModel)]="IMLP"  (change)="LMA()">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>lb. Liquid Molybdenum Added </mat-label>
+    <input matInput type="number" [(ngModel)]="LMAL"  (change)="LMA()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Final Mo Level (ppm)</mat-label>
+    <input matInput type="number" [(ngModel)]="FMLP"  (change)="LMA()">
+  </mat-form-field>
+  <h2>Calculated Volume(Gal) : {{LMAV}}  </h2>
+
+  <h3><b>Salt Test</b></h3>
+<mat-form-field appearance="outline">
+    <mat-label>Initial Chloride Level (ppm)</mat-label>
+    <input matInput type="number" [(ngModel)]="ICLP"  (change)="ICL()">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>lb. Salt Added </mat-label>
+    <input matInput type="number" [(ngModel)]="LSAA"  (change)="ICL()">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Final Chloride Level (ppm)</mat-label>
+    <input matInput type="number" [(ngModel)]="FCLP"  (change)="ICL()">
+  </mat-form-field>
+  <h2>Calculated Volume(Gal) : {{ICLV}}  </h2>
+ </div>

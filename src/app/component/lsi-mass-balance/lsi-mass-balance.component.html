@@ -1,0 +1,44 @@
+<p></p>
+<div class= "inputdata">
+<mat-toolbar color= "DarkGray" style ="height: 30px;">
+    <b>LSI Data</b>
+</mat-toolbar><br/>
+<mat-form-field appearance="outline">
+  <mat-label>Target Tower Cycles  </mat-label>
+  <input matInput type="number" [(ngModel)]="TTC" (change)="F1()" >
+</mat-form-field>
+<mat-form-field appearance="outline">
+    <mat-label>Max. Skin Temp (F)    </mat-label>
+    <input matInput type="number" [(ngModel)]="MST" (change)="F1()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Makeup Conductivity	    </mat-label>
+    <input matInput type="number" [(ngModel)]="MC" (change)="F1()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Makeup Total Alkalinity	    </mat-label>
+    <input matInput type="number" [(ngModel)]="MTA" (change)="F1()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Makeup Calcium Hardness</mat-label>
+    <input matInput type="number" [(ngModel)]="MCH" (change)="F1()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Makeup Silica</mat-label>
+    <input matInput type="number" [(ngModel)]="MKS" (change)="F1()" >
+  </mat-form-field>
+  <h3><b>Max Cycles @ 180 ppm Silica:	{{MXC}}</b></h3>
+
+  <h3><b>Calculated pH @ Target Cycles:	{{CPT}}</b></h3>
+
+  <h3><b>Tower LSI Calc pH: {{TLC}}</b>	</h3>
+  <mat-form-field appearance="outline">
+    <mat-label>Actual Tower pH	    </mat-label>
+    <input matInput type="number" [(ngModel)]="ATP" (change)="F1()" >
+  </mat-form-field>
+
+  <h3><b>Tower LSI Actual pH:	{{TLA}}</b></h3>
+
+ 
+
+

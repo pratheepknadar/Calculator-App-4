@@ -1,0 +1,96 @@
+<div class="CT-Timer">
+    <mat-toolbar color= "DarkGray" style ="height: 30px;">
+        <b>CT % Timer (Manual)</b>
+    </mat-toolbar><br/>
+    <mat-form-field appearance="outline">
+      <mat-label>Calculator Input Type (Automatic/ Manual)</mat-label>
+      <mat-select >
+      <mat-option routerLink="/ct-timer" value="v1">Regular Input</mat-option>
+      <mat-option routerLink="/ct-timer-manual"value="v2">Manual Input</mat-option>
+      </mat-select>
+      </mat-form-field><br>
+      </div>
+<h4>Enter all the Values Manually</h4>
+<div class="CT-Timer">
+    
+    <h3><b>Systems Data</b></h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Tons Refrigeration:</mat-label>
+      <input matInput type="number"  [(ngModel)]= "TR" (change)="CS()">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estimated % Load:</mat-label>
+      <input matInput type="number"  [(ngModel)]= "EL" (change)="CS()">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Operation Hours/Day:</mat-label>
+      <input matInput type="number"  [(ngModel)]= "OHD" (change)="CS()">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Table Tower Cycles:</mat-label>
+      <input matInput type="number" [(ngModel)]= "TOW" (change)="CS()" >
+    </mat-form-field>
+    <h3><b>Product Data</b></h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Product Name: </mat-label>
+        <input matInput type="number" [(ngModel)]= "CHEM"(change)= ProductData() >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Form</mat-label>
+        <mat-select [(ngModel)] = "LOL" (selectionChange)="ProductData()" >
+        <mat-option value="v1">Liquid</mat-option>
+        <mat-option value="v2">Solid</mat-option>
+        </mat-select>
+    </mat-form-field><br>  
+
+    <mat-form-field appearance="outline">
+        <mat-label>Recommended Feed Rate (ppm): </mat-label>
+        <input matInput type="number" [(ngModel)]= "FR"(change)= ProductData() >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Product Feed Rate (ppm): </mat-label>
+        <input matInput type="number" [(ngModel)]= "PFR"(change)= ProductData() >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Product Density(lb/gal): </mat-label>
+        <input matInput type="number" [(ngModel)]= "CD"(change)= ProductData() >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Feed Solution Strength:</mat-label>
+        <input matInput type="number" [(ngModel)]= "strength" (change)= ProductData() >
+      </mat-form-field>
+
+<h2>Adjusted Feed Rate (ppm): {{AFR}}</h2>
+
+<h3><b>Feed Pump Settings</b></h3>
+<mat-form-field appearance="outline">
+  <mat-label>Max. Pump Output (GPD): </mat-label>
+  <input matInput type="number" [(ngModel)]= "MaxPO" (change)="FPS()">
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>% Speed Setting: </mat-label>
+  <input matInput type="number"  [(ngModel)]= "SpeedSetting" (change)="FPS()">
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>% Stroke / Stroke Frequency: </mat-label>
+  <input matInput type="number"  [(ngModel)]= "StrokeFreq" (change)="FPS()">
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Max Stroke Frequency</mat-label>
+  <input matInput type="number"  [(ngModel)]= "MaxStrokeFreq" (change)="FPS()">
+</mat-form-field>
+
+<h2 >Adjusted Pump Output (GPD): {{AdjPO}}</h2>
+<h3><b>Controller Settings</b></h3>
+<mat-form-field appearance="outline">
+  <mat-label>Time Cycle (Min): </mat-label>
+  <input matInput type="number"  [(ngModel)]= "TimeCycle" (change)="CS()">
+</mat-form-field>
+<h2 >%Time Pump is On: {{TimePump}}</h2>
+<h2 >Minutes on Time per Cycle: {{MinPercycle}}</h2>
+
+</div>

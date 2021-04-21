@@ -1,0 +1,71 @@
+<div class ='inputdata'>
+    <h1><b>System Volume Estimate by Addition (Manual)</b></h1>
+    <mat-form-field appearance="outline">
+        <mat-label>Calculator Input Type (Regular/ Manual)</mat-label>
+        <mat-select >
+        <mat-option routerLink="/VolumebyAddition" value="v1">Regular Input</mat-option>
+        <mat-option routerLink="/VolumebyAdditionManual"value="v2">Manual Input</mat-option>
+        </mat-select>
+        </mat-form-field><br>
+  <h3> Enter all the values manually </h3>
+
+ <mat-form-field appearance="outline">
+  <mat-label>System Designation</mat-label>
+  <input matInput >
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+  <mat-label>Chemical Name: </mat-label>
+  <input matInput [(ngModel)]="CHEM" >
+</mat-form-field><br/>
+
+<mat-form-field appearance="outline">
+  <mat-label>Form</mat-label>
+  <mat-select [(ngModel)] = "SOL" (selectionChange)="ChemAdd()" >
+  <mat-option value="v1">Liquid</mat-option>
+  <mat-option value="v2">Solid</mat-option>
+  </mat-select>
+  </mat-form-field><br>
+
+<mat-form-field appearance="outline">
+  <mat-label>Chemical Density: </mat-label>
+  <input matInput [(ngModel)]="CD" (change)="ChemAdd()">
+</mat-form-field><br/>
+
+
+<mat-form-field appearance="outline">
+  <mat-label>Inhibitor TEST: </mat-label>
+  <mat-select [(ngModel)] = "INHIBT" (selectionChange)="SysVol()" >
+  <mat-option value="i1">PTSA</mat-option>
+  <mat-option value="i2">Mo</mat-option>
+  <mat-option value="i3">Other</mat-option>
+  <mat-option value="i4">Sodium Nitrate</mat-option>
+  </mat-select>
+  </mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>Inhibitor % Test Active: </mat-label>
+  <input matInput [(ngModel)]="ITA" (change)="SysVol()">
+</mat-form-field><br/>
+
+<mat-form-field appearance="outline">
+  <mat-label>Inhibitor Test: </mat-label>
+  <input matInput [(ngModel)]="ITR" (change)="SysVol()">
+</mat-form-field><br/>  
+
+<mat-form-field appearance="outline">
+  <mat-label>Solid Chemical Addition (lb)</mat-label>
+  <input matInput [(ngModel)]="SCA" (change)="ChemAdd()">
+</mat-form-field><br/> 
+
+<mat-form-field appearance="outline">
+  <mat-label>Liquid Chemical Addition (gal): </mat-label>
+  <input matInput [(ngModel)]="LCA" (change)="ChemAdd()">
+</mat-form-field><br/>  
+<h2>Chemical Addition (lb): {{chemAddition}}</h2>
+<mat-form-field appearance="outline">
+  <mat-label>Final Test Residual(Ppm/ppb): </mat-label>
+  <input matInput [(ngModel)]="FINTR" (change)="SysVol()">
+</mat-form-field><br/>  
+<h2>Calculated Volume (gal): {{SystemVolume}}</h2>
+</div>

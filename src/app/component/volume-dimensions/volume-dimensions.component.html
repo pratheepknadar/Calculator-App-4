@@ -1,0 +1,106 @@
+<div class="dim">
+<mat-toolbar color= "DarkGray" style ="height: 30px;">
+    <b>System Volume Estimate by Dimensions</b>
+</mat-toolbar><br/>
+<h3><b>System</b></h3>
+<mat-form-field appearance="outline">
+    <mat-label>System Designation</mat-label>
+    <input matInput type="number"  >
+  </mat-form-field>
+  <h3><b>Sump Dimensions</b></h3>
+  <mat-form-field appearance="outline">
+    <mat-label>Length (ft):</mat-label>
+    <input matInput type="number" [(ngModel)]="Len1" (change)="Sump1()"  >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Width (ft):</mat-label>
+    <input matInput type="number" [(ngModel)]="Wid1" (change)="Sump1()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Depth (ft):</mat-label>
+    <input matInput type="number"  [(ngModel)]="Dep1" (change)="Sump1()">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity: </mat-label>
+    <input matInput type="number" [(ngModel)]="Qty1" (change)="Sump1()" >
+  </mat-form-field>
+  <h3>{{SumpF}}</h3>
+  <h3><b>Cylindrical Tank(s)</b></h3>
+  <mat-form-field appearance="outline">
+    <mat-label>Height (ft) </mat-label>
+    <input matInput type="number" [(ngModel)]="Hgt1" (change)="CT()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Diameter (ft) </mat-label>
+    <input matInput type="number" [(ngModel)]="Dia1" (change)="CT()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity </mat-label>
+    <input matInput type="number"  [(ngModel)]="Qty2" (change)="CT()">
+  </mat-form-field>
+  <h3></h3>{{FCT}}
+  <h3><b>Piping Diameter</b></h3>
+  <mat-form-field appearance="outline">
+    <mat-label>36" </mat-label>
+    <input matInput type="number" [(ngModel)]="A" (change)="PD()"  >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>30" </mat-label>
+    <input matInput type="number" [(ngModel)]="B" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>28" </mat-label>
+    <input matInput type="number" [(ngModel)]="C" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>26" </mat-label>
+    <input matInput type="number" [(ngModel)]="D" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>24" </mat-label>
+    <input matInput type="number" [(ngModel)]="E" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>22" </mat-label>
+    <input matInput type="number" [(ngModel)]="F" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>20" </mat-label>
+    <input matInput type="number" [(ngModel)]="G" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>18" </mat-label>
+    <input matInput type="number" [(ngModel)]="H" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>16" </mat-label>
+    <input matInput type="number" [(ngModel)]="I" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>14" </mat-label>
+    <input matInput type="number" [(ngModel)]="J" (change)="PD()"  >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>12" </mat-label>
+    <input matInput type="number" [(ngModel)]="K" (change)="PD()" >
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>10" </mat-label>
+    <input matInput type="number" [(ngModel)]="L" (change)="PD()" >
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>8" </mat-label>
+    <input matInput type="number" [(ngModel)]="M" (change)="PD()" >
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>6" </mat-label>
+    <input matInput type="number" [(ngModel)]="N" (change)="PD()" >
+  </mat-form-field>
+  <h3>{{FPD}}</h3>
+  <h3><b>Contigency</b></h3>
+  <mat-form-field appearance="outline">
+    <mat-label>Contigency (%) </mat-label>
+    <input matInput type="number" [(ngModel)]="CTGP" (change)="CTG()" >
+  </mat-form-field>
+  <h3><b>System Volume (gal): {{CTGPF}}</b></h3>
+</div>

@@ -1,0 +1,125 @@
+<div class="CSWLC">
+  <mat-toolbar color= "DarkGray" style ="height: 30px;">
+      <b>Closed System
+          Water Loss Costs (Automatic)
+          </b>
+  </mat-toolbar><br/>
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Calculator Input Type (Regular/ Manual)</mat-label>
+    <mat-select >
+    <mat-option routerLink="/CSWaterlossCosts" value="v1">Regular Input</mat-option>
+    <mat-option routerLink="/CSWaterlossCostsManual"value="v2">Manual Input</mat-option>
+    </mat-select>
+    </mat-form-field><br>
+  <mat-form-field appearance="outline">
+      <mat-label>System Designation</mat-label>
+      <input matInput type="number"  >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>System Volume (gal)</mat-label>
+      <input matInput type="number" [(ngModel)]="sysVol" (change)="CC()">
+    </mat-form-field>
+  <h3><b>Closed System Inhibitor</b></h3>
+
+  <mat-form-field appearance="outline">
+  <mat-label>Inhibitor Name</mat-label>
+  <mat-select [(ngModel)]="CHEM" (selectionChange)="csWaterLossCost1()">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor = "let item of productsList" [value]="item.AN">{{item.AN}}</mat-option>
+    </mat-select>
+</mat-form-field><br/>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Inhibitor Cost ($/lb)
+      </mat-label>
+      <input matInput type="number" [(ngModel)]="IC" (change)="csWaterLossCost1()">
+    </mat-form-field>
+
+   <h2 >Form:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{LOL}}</h2>
+<h2 >Chemical Density(lb/gal):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{CD}}</h2>
+<h2 >Inhibitor test:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{INHIBT}}</h2>
+<h2 >Inhibitor % Test Active:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ITA}} %</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Current Test Level (ppm/ppb)         
+      </mat-label>
+      <input matInput type="number"  [(ngModel)]="CurrTestL" (change)="csWaterLossCost1()">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Target Test Level (ppm/ppb)
+      </mat-label>
+      <input matInput type="number" [(ngModel)]="TTestL" (change)="csWaterLossCost1()">
+    </mat-form-field>
+    <h2>Target Treatment Level (ppm): {{TTreatL}}
+    </h2>
+    <h2>Differential Treatment Level: {{DTreatL}}
+    </h2>
+    <h2>Chemical Cost
+  </h2>
+  <h3>Chemical Addition (lb) : {{chemAddlb}}
+  </h3>  
+  <h3>Chemical Addition (gal) : {{chemAddgal}}
+  </h3>
+  <h3>Chemical Addition Cost : {{chemAddcost}}
+  </h3>
+
+  <h3><b>Water Cost</b></h3>
+
+  <mat-form-field appearance="outline">
+      <mat-label>Water Cost ($/1000 gal)        </mat-label>
+      <input matInput type="number" [(ngModel)]="WC" (change)="WaterCost()">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Sewage Cost ($/1000 gal)
+      </mat-label>
+      <input matInput type="number"  [(ngModel)] = "SC" (change)="WaterCost()">
+    </mat-form-field>
+  
+  <h2>Total Cost ($/1000 gal): {{TC}}</h2>
+      
+
+  <mat-form-field appearance="outline">
+    <mat-label>Previous Test Date</mat-label>
+    <input matInput (dateChange)="WaterCost()"   [(ngModel)]='date1'[matDatepicker]="dt1" placeholder="Date of Reading">
+    <mat-datepicker-toggle matSuffix [for]="dt1"></mat-datepicker-toggle>
+    <mat-datepicker #dt1 color="primary"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Previous Test Level (ppm)
+      </mat-label>
+      <input matInput type="number" [(ngModel)]="PTestL" (change)= "WaterCost()">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Current Test Date</mat-label>
+      <input (dateChange)="WaterCost()" matInput [(ngModel)]='date2' [matDatepicker]="dt2" placeholder="Date of Reading">
+      <mat-datepicker-toggle matSuffix [for]="dt2"></mat-datepicker-toggle>
+      <mat-datepicker #dt2 color="primary"></mat-datepicker>
+      </mat-form-field>
+
+    
+  <h3>Time Period (days) : {{diffDays}}
+  </h3>  
+  <h3>Calculated Water Loss (gal) : {{CWaterLoss}}
+  </h3>
+  <h3>Water Loss Cost: {{WaterLossCost}}
+  </h3>
+  <br>
+  <h2>Annualized Excess Costs
+  </h2>
+  <h3>Annualized Chemical Req (lb): {{ACReq}}
+  </h3>  
+  <h3>Annualized Water Loss (gal) : {{AWLoss}}
+  </h3>
+
+  <h3>Annualized Chemical Cost:   {{ACC}}
+  </h3>
+  <h3><b>Annualized Water Cost: {{AWC}}
+  </b></h3>
+  <h3>Total Annualized Excess Cost: {{TAEC}}
+  </h3>
+</div>

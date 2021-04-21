@@ -1,0 +1,47 @@
+<div class="CSWL">
+  <mat-toolbar color= "DarkGray" style ="height: 30px;">
+      <b>Closed System-Water loss by Depletion</b>
+  </mat-toolbar><br/>
+  <h3><b>System</b></h3>
+  <h3><b>Test Concentrations</b></h3>
+  <mat-form-field appearance="outline">
+      <mat-label>System Designation</mat-label>
+      <input matInput type="number"  >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>System Volume (gal)</mat-label>
+      <input matInput type="number" [(ngModel)]="SYV" (change)="Date2()" >
+    </mat-form-field>
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Previous Test Date</mat-label>
+    <input matInput (dateChange)="Date2()"   [(ngModel)]='date1'[matDatepicker]="dt1" placeholder="Date of Reading">
+    <mat-datepicker-toggle matSuffix [for]="dt1"></mat-datepicker-toggle>
+    <mat-datepicker #dt1 color="primary"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Previous Test level (ppm/ppb)</mat-label>
+      <input matInput type="number" [(ngModel)]="PTL" (change)="Date2()"  >
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Current Test Date</mat-label>
+      <input (dateChange)="Date2()" matInput [(ngModel)]='date2' [matDatepicker]="dt2" placeholder="Date of Reading">
+      <mat-datepicker-toggle matSuffix [for]="dt2"></mat-datepicker-toggle>
+      <mat-datepicker #dt2 color="primary"></mat-datepicker>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Current Test level (ppm/ppb)</mat-label>
+      <input matInput type="number" [(ngModel)]="CTL" (change)="Date2()" >
+    </mat-form-field>
+  <h3><b>Time Period (days): {{diffDays}} </b></h3>
+  <h3><b>Calculated water Loss (gal): {{CWL1}}</b></h3>
+  <h3><b>Annualized Water Loss (gal): {{AWL1}} </b></h3>
+
+
+
+   
+
+</div>

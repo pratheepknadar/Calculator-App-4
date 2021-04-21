@@ -1,0 +1,26 @@
+[
+        {
+            "SystemType": "Standard Chiller",
+            "Capacity": "Cooling Capacity (Tons)",
+            "LoadFactor": "Avg % Load",
+            "EvaporationRate": "33048"
+        },
+        {
+            "SystemType": "Ammonia Condenser",
+            "Capacity": "Cooling Capacity (Tons)",
+            "LoadFactor": "Avg % Load",
+            "EvaporationRate": "33048"
+        },
+        {
+            "SystemType": "Absorption Chiller",
+            "Capacity": "Cooling Capacity (Tons)",
+            "LoadFactor": "Avg % Load",
+            "EvaporationRate": "66096"
+        },
+        {
+            "SystemType": "Process Cooling",
+            "Capacity": "Recirculation Rate (GPM)",
+            "LoadFactor": "Avg Delta T (°F)",
+            "EvaporationRate": "110160"
+        }
+    ]

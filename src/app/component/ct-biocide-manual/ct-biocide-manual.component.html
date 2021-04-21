@@ -1,0 +1,86 @@
+<div class= "ctbio">
+<mat-toolbar color= "DarkGray" style ="height: 30px;">
+ <b>Cooling Tower Biocide Feed (Timed Feed Per Application)</b>
+</mat-toolbar><br/>
+
+<mat-form-field appearance="outline">
+  <mat-label>Calculator Input Type (Regular/ Manual)</mat-label>
+  <mat-select >
+  <mat-option routerLink="/ct-bio" value="v1">Regular Input</mat-option>
+  <mat-option routerLink="/ct-bio-manual"value="v2">Manual Input</mat-option>
+  </mat-select>
+  </mat-form-field><br>
+
+<h3> Enter all the values manually </h3>
+  <mat-form-field appearance="outline">
+    <mat-label>System Volume (gal)    </mat-label>
+    <input matInput type="number" [(ngModel)]="SYSVB" (change)="BIOF()" >
+  </mat-form-field>    
+
+<h4>Product Data</h4>  
+  <mat-form-field appearance="outline">
+    <mat-label>Product Name  </mat-label>
+    <input matInput type="text" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Form</mat-label>
+      <mat-select [(ngModel)] = "SOLF" (selectionChange)="BIOF()"  >
+        <mat-option  value="p1">Liquid</mat-option>
+        <mat-option  value="p2">Solid</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Recommended Feed Rate(ppm)   </mat-label>
+    <input matInput type="number" [(ngModel)]="RFR" (change)="BIOF()" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Product Feed Rate(ppm)  </mat-label>
+    <input matInput type="number" [(ngModel)]="PFR" (change)="BIOF()" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Product Density</mat-label>
+    <input matInput type="number" [(ngModel)]="PDB" (change)="BIOF()" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Feed Solution Strength    </mat-label>
+    <input matInput type="number" [(ngModel)]="FSS" (change)="BIOF()" >
+  </mat-form-field>
+  <h3>Adjusted Feed Rate (ppm): {{ADJ}}</h3>
+  
+  <br> <br>
+  <h3>Feed Pump Settings</h3>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Max. Pump Output (GPD)    </mat-label>
+    <input matInput type="number" [(ngModel)]="MPO" (change)="BIOF()" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>% Speed Setting    </mat-label>
+    <input matInput type="number" [(ngModel)]="PSS" (change)="BIOF()" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>% Stroke / Stroke Frequency    </mat-label>
+    <input matInput type="number" [(ngModel)]="PSSF" (change)="BIOF()" >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Max Stroke Frequency    </mat-label>
+    <input matInput type="number" [(ngModel)]="MSF" (change)="BIOF()" >
+  </mat-form-field>
+
+  <h3>Adjusted Pump Output (GPD): {{APO}}
+</h3>
+  <h3>Controller Settings</h3>
+
+  <h3>Pump Run Time {{PRTM1}}</h3>
+</div>
+ 
+
+

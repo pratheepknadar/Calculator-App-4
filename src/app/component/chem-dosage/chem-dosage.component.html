@@ -1,0 +1,75 @@
+<div class="CHDOS">
+    <mat-toolbar color= "DarkGray" style ="height: 30px;">
+        <b>Dosage To Achieve Target Residual </b>
+    </mat-toolbar><br/>
+    <mat-form-field appearance="outline">
+        <mat-label>System Designation</mat-label>
+        <input matInput type="text"  >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>System Volume (gal)</mat-label>
+        <input matInput type="number" [(ngModel)]="CDSV" (change)="CD1()" >
+      </mat-form-field>
+    <h3><b>Closed System Inhibitor</b></h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Inhbitor Name (Drop Down)</mat-label>
+        <input matInput type="number" [(ngModel)]="CDIN" (change)="CD1()" >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Form</mat-label>
+          <mat-select [(ngModel)] = "LOS" (selectionChange)="CD1()" (selectionChange)="CD2()" >
+            <mat-option  value="o1">Solid</mat-option>
+            <mat-option  value="o2">Liquid</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Chemical Density (lb/gal)
+        </mat-label>
+        <input matInput type="number" [(ngModel)]="CDCD" (change)="CD1()"  >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inhibitor Test </mat-label>
+          <mat-select [(ngModel)] = "CDIT" (selectionChange)="CD1()">
+            <mat-option  value="a1">PTSA</mat-option>
+            <mat-option  value="a2">Sodium Nitrite</mat-option>
+            <mat-option  value="a3">Mo</mat-option>
+            <mat-option  value="a4">Other</mat-option>
+          </mat-select>
+        
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Inhibitor % Test Active            
+        </mat-label>
+        <input matInput type="number" [(ngModel)]="CDITA" (change)="CD1()" >
+      </mat-form-field>
+
+      <br/> <br> <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Current Test Level (ppm/ppb)
+        </mat-label>
+        <input matInput type="number" [(ngModel)]="CDCTL" (change)="CD1()"  >
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Target Test Level (ppm/ppb)
+        </mat-label>
+        <input matInput type="number" [(ngModel)]="CDTTL" (change)="CD1()"  >
+      </mat-form-field>
+     
+      <h3>Target Treatment Level (ppm)
+        {{CDIT1}} </h3>
+
+      <h3>Differential Treatment Level
+ :{{CDIT2}}</h3>
+      <h3>Chemical Addition (lb)  
+        {{CHEMADDF}} </h3>
+      <h3>Chemical Addition (gal)
+        {{CHEMADDF2}}
+    </h3>
+
+     

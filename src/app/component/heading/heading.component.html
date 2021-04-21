@@ -1,0 +1,31 @@
+<mat-toolbar color="DarkGray">
+<mat-toolbar-row>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/VolumebyAddition">Volume by Addition</button>
+        <button mat-menu-item>Volume by PTSA Mo Salt</button>
+        <button mat-menu-item>Volume by diemnsions</button>
+    </mat-menu>
+    
+    <span class ="box">
+    <h1 class ="centre" style="color:black;"><b> SMART</b><label style="color: blue;"><b>One</b></label> Calculator</h1>
+  </span>
+    <span class="example-spacer"></span>
+   
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <span class="material-icons">
+            home
+            </span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+  <!-- <mat-toolbar color= "primary" style ="height: 30px;">
+      <button mat-button routerLink = "/VolumebyAddition" routerLinkActive="Active">Volume by Addition</button>
+  <button mat-button routerLink = "/VolumebyPTSA">Volume by PTSA Mo Salt</button>
+  <button mat-button routerLink = "/VolumebyDimension">Volume by Dimensions</button>
+
+  </mat-toolbar> -->
+ 

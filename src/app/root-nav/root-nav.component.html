@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink=""> <span class="material-icons">
+        home </span> Home</a>
+      <a mat-list-item routerLink="/VolumebyAddition">Volume by Addition</a>
+      <a mat-list-item routerLink="/VolumebyPTSA">Volume by PTSA Mo Salt</a>
+      <a mat-list-item routerLink="/VolumebyDimension">Volume by dimensions</a>
+      <a mat-list-item routerLink="/CSWaterLoss">Closed System-Water loss</a>
+      <a mat-list-item routerLink="/CSWaterlossCosts">Closed System-Water loss Costs</a>
+      <a mat-list-item routerLink="/chemDosage">Chemical Dosage</a>
+      <a mat-list-item routerLink="/lsi-mass">CT LSI </a>
+      <a mat-list-item routerLink="/ct-mass-balance">CT Mass Balance </a>
+      <a mat-list-item routerLink="/ct-bio">CT Biocide Feed</a>
+      <a mat-list-item routerLink="/ct-prop">CT Prop Makeup</a>
+      <a mat-list-item routerLink="/ct-bleed">CT Bleed</a>
+      <a mat-list-item routerLink="/ct-timer">CT % Timer</a>
+      <a mat-list-item routerLink="/ct-bleed-feed">CT Bleed Fleed</a>
+     
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="DarkGray">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="true"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class ="box">
+        <h1 class ="centre" style="color:black;"><b> SMART</b><label style="color: #3276B4;"><b>One</b></label> Calculator</h1>
+      </span>
+      <span class="example-spacer"></span>
+      <button mat-fab routerLink="/" color="DarkGray" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class= "center" style="width:1000px; margin:0 auto;"><router-outlet></router-outlet></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,60 @@
+<div class ='inputdata'>
+  <h1><b>System Volume Estimate by Addition (Regular)</b></h1>
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Calculator Input (Regular/ Manual)</mat-label>
+    <mat-select>
+    <mat-option routerLink="/VolumebyAddition" value="v1">Regular Input</mat-option>
+    <mat-option routerLink="/VolumebyAdditionManual"value="v2">Manual Input</mat-option>
+    </mat-select>
+    </mat-form-field><br><br>
+
+ <mat-form-field appearance="outline">
+  <mat-label>System Designation</mat-label>
+  <input matInput >
+</mat-form-field><br/>
+
+<mat-form-field appearance="outline">
+  <mat-label>Chemical</mat-label>
+  <mat-select [(ngModel)]="CHEM" (selectionChange)="ChemAdd1()">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor = "let item of productsList" [value]="item.AN">{{item.AN}}</mat-option>
+    </mat-select>
+</mat-form-field><br/>
+
+<h2 >Form&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{LOL}}</h2>
+<h2 >Chemical Density(lb/gal):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{CD}}</h2>
+<h2 >Inhibitor test:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{INHIBT}}</h2>
+<h2 >Inhibitor % Test Active:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ITA}} %</h2>
+
+<mat-form-field appearance="outline">
+  <mat-label>Initial Test Residual(ppm/ppb) </mat-label>
+  <input matInput [(ngModel)]="ITR" (change)="ChemAdd1()">
+</mat-form-field><br/>
+
+<mat-form-field appearance="outline">
+  <mat-label>Solid Chemical Addition(lb) </mat-label>
+  <input matInput [(ngModel)]="SCA" (change)="ChemAdd1()">
+</mat-form-field><br/>
+
+<mat-form-field appearance="outline">
+  <mat-label>Liquid Chemical Addition(gal)</mat-label>
+  <input matInput [(ngModel)]="LCA" (change)="ChemAdd1()">
+</mat-form-field><br/>
+
+<h2>Chemical Addition(lb) : {{chemAddition}}  </h2>
+<mat-form-field appearance="outline">
+  <mat-label>Final Test Residual (ppm/ppb) </mat-label>
+  <input matInput [(ngModel)]="FINTR" (change)="ChemAdd1()"> 
+</mat-form-field><br/>
+<h2>Calculated Volume(Gal) : {{SystemVolume}}  </h2>
+
+ <p>Note:
+  
+ 1) Accurately measure volume of chemical addition.
+  
+ 2) After chemical addition, allow system to circulate until readings stabilize.
+ 
+ 3) Volume measurement will not reflect offline equipment and piping.
+ </p>
+ </div>
